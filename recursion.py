@@ -50,12 +50,12 @@ def generatePaths(node):
     if not children:
         return [[node]]
 
-    my_paths = []
+    paths = []
 
     for child in children:
-        my_paths = my_paths + list(map((lambda group: [node] + group), generatePaths(child)))
+        paths = paths + list(map((lambda group: [node] + group), generatePaths(child)))
 
-    return my_paths
+    return paths
 
 output = generatePaths("1")
 
